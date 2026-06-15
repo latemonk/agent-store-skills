@@ -1,15 +1,15 @@
 # Agent Store — Claude Skills
 
-Skills that help Claude use the **Agent Store** MCP connector (https://agent.store/mcp)
-for Korean public & financial data. Connect via OAuth; enable agents in the console.
+Task playbooks that help Claude (and any MCP client) use the **Agent Store** connector
+(https://agent.store/mcp) for Korean public & financial data. Connect via OAuth; enable
+agents in the console. Also exposed by the gateway as MCP resources (resources/read).
 
 ## Skills
-- **korean-public-data** — umbrella router: which agent to use for any Korea question
-  (companies, law, statistics, macro, procurement, real estate, business verification),
-  with identifier resolution and source citation. Start here.
-- **dart-financial-analysis** — deep playbook for Korean listed-company financial
-  analysis (ratios, distress screening, peer benchmarking, reports) via `dart__` tools.
-- **equity-report-jobs** — the async create→poll→deliver flow for Korean/US equity
-  research reports (`kr_equity_report__` / `us_equity_report__`).
+- **korean-public-data** — umbrella router: which agent for any Korea question. Start here.
+- **dart-financial-analysis** — Korean listed-company ratios, distress screening, peers, reports (`dart__`).
+- **equity-report-jobs** — async create→poll→deliver flow for KR/US equity research reports.
+- **company-due-diligence** — verify & profile a Korean company from a business number (status + pension + insurance + financials).
+- **korean-real-estate** — buildings, permits, assessed price, apartment transactions, new-home subscriptions, from an address.
+- **commercial-district-analytics** — store density / industry mix within a radius, polygon, or trade zone.
 
 Docs: https://agent.store/docs/connect/
