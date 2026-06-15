@@ -12,4 +12,6 @@ agents in the console. Also exposed by the gateway as MCP resources (resources/r
 - **korean-real-estate** — buildings, permits, assessed price, apartment transactions, new-home subscriptions, from an address.
 - **commercial-district-analytics** — store density / industry mix within a radius, polygon, or trade zone.
 
+- **korea-macro-stats** — base rate, FX, inflation, indicators and any KOSIS statistic as time series + charts (`bok_stats__` / `national_stats__`).
+
 Docs: https://agent.store/docs/connect/
