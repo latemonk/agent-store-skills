@@ -32,28 +32,29 @@ of guessing from memory whenever a question is about Korea.
 | Address ↔ coordinates | `geocoder__…`, `address-search__…` | address |
 | Verify a business / closure / tax type | `business-status__…` | 10-digit business number |
 | One-shot company profile (status + pension + insurance + financials) | `company-360__…` | business number |
-| Pension / employment & accident insurance by workplace | `pension-workplace__…`, `labor-insurance__…` | business number |
+| Pension / employment & accident insurance by workplace; industry class & premium rate | `pension-workplace__…`, `labor-insurance__…` | business number, or plain-language industry (`insure_industry_search_nl`) |
 | Korean equity research report (PDF/DOCX) | `kr-equity-report__…`, `us-equity-report__…` | ticker / name |
 | Standard Korean dictionary definition | `korean-dict__…` | the word |
 | Real estate transactions (apt·officetel·rowhouse·detached·commercial·land, sale/rent) | `real-estate-trades__…` | LAWD_CD (5-digit district) + YYYYMM |
-| Land-use regulations (what you can build), land-use plan map | `land-use__…` | district code + zone code (UCODE) |
+| Land-use regulations (what you can build), land-use plan map | `land-use__…` | plain-language action (`landuse_search_action_nl`), or district + zone codes |
 | Construction firm registrations / sanctions / closures (KISCON) | `construction-firms__…` | period + region |
 | Capital-market stats & quotes (ETF/ETN/ELW, funds, trust, bonds, ELS/DLS) | `capital-markets__…` | category / product / date |
 | Import-export trade statistics by HS code / country | `trade-stats__…` | HS code + month + country |
 | Consumer staple prices (참가격) | `consumer-prices__…` | product id |
 | Trains / domestic flights / airports / bridges & tunnels | `transport__…` | route / airport / year |
 | Vessel port-calls & specifications | `vessel-info__…` | port / vessel name |
-| Drugs, medical devices, health-functional foods, food ingredients (MFDS) | `food-drug-safety__…` | product / company name |
-| Cosmetic ingredients, makers, functional cosmetics | `cosmetics__…` | ingredient / product |
+| Drugs, medical devices, health-functional foods, food ingredients (MFDS) | `food-drug-safety__…` | symptom in plain language (`mfds_drug_easy_nl`), or product / company name |
+| Cosmetic ingredients, makers, functional cosmetics | `cosmetics__…` | plain-language ingredient (`cosmetic_ingredient_nl`), or standard name / product |
 | Hospitals · clinics · pharmacies (find by region/coords) | `medical-facilities__…` | region or coordinates |
-| Clinical trials (CRIS) search / detail / stats | `clinical-trials__…` | query / trial id / year |
+| Clinical trials (CRIS) search / detail / stats | `clinical-trials__…` | plain-language question (`cris_search_nl`), medical query, trial id, or year |
 | School info · meals · timetables · academies (NEIS) | `school-info__…` | school name → office/school code |
 | KCI scholarly papers · authors | `scholar-papers__…` | article id |
 | Government startup-support programs (K-Startup) | `startup-support__…` | (page) |
 | Livestock auction grades & prices (Hanwoo etc.) | `livestock-grades__…` | period · breed |
-| National Assembly bills — search & progress timeline (committee→plenary→promulgation) | `assembly-bills__…` | bill title/proposer, or bill number |
+| National Assembly bills — natural-language or keyword search & progress timeline (committee→plenary→promulgation) | `assembly-bills__…` | plain-language question, bill title/proposer, or bill number |
 
 ## How to use the tools well
+- **Plain-language search (a first in Korea).** Tools ending in `_nl` take everyday phrasing as-is ("any bills expanding EV chargers?", "premium rate for a chicken shop") and auto-expand it into official nomenclature, ranked by relevance. Prefer `_nl` when the user's wording may differ from official terms; use the cheaper base search when you already know the exact term.
 - **Resolve identifiers first.** Many tools need a code: search the company/ticker
   (e.g. `dart__dart_search_companies`), geocode an address, or confirm a business
   number before deeper calls.
