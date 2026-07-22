@@ -14,7 +14,7 @@ description: >-
 
 # Korean Public & Financial Data via Agent Store
 
-Agent Store federates 20+ Korean public- and financial-data MCP agents behind one
+Agent Store federates 35+ Korean public- and financial-data MCP agents behind one
 gateway. All tools are **read-only** and return source-cited data. Use them instead
 of guessing from memory whenever a question is about Korea.
 
@@ -35,6 +35,23 @@ of guessing from memory whenever a question is about Korea.
 | Pension / employment & accident insurance by workplace | `pension-workplace__…`, `labor-insurance__…` | business number |
 | Korean equity research report (PDF/DOCX) | `kr-equity-report__…`, `us-equity-report__…` | ticker / name |
 | Standard Korean dictionary definition | `korean-dict__…` | the word |
+| Real estate transactions (apt·officetel·rowhouse·detached·commercial·land, sale/rent) | `real-estate-trades__…` | LAWD_CD (5-digit district) + YYYYMM |
+| Land-use regulations (what you can build), land-use plan map | `land-use__…` | district code + zone code (UCODE) |
+| Construction firm registrations / sanctions / closures (KISCON) | `construction-firms__…` | period + region |
+| Capital-market stats & quotes (ETF/ETN/ELW, funds, trust, bonds, ELS/DLS) | `capital-markets__…` | category / product / date |
+| Import-export trade statistics by HS code / country | `trade-stats__…` | HS code + month + country |
+| Consumer staple prices (참가격) | `consumer-prices__…` | product id |
+| Trains / domestic flights / airports / bridges & tunnels | `transport__…` | route / airport / year |
+| Vessel port-calls & specifications | `vessel-info__…` | port / vessel name |
+| Drugs, medical devices, health-functional foods, food ingredients (MFDS) | `food-drug-safety__…` | product / company name |
+| Cosmetic ingredients, makers, functional cosmetics | `cosmetics__…` | ingredient / product |
+| Hospitals · clinics · pharmacies (find by region/coords) | `medical-facilities__…` | region or coordinates |
+| Clinical trials (CRIS) search / detail / stats | `clinical-trials__…` | query / trial id / year |
+| School info · meals · timetables · academies (NEIS) | `school-info__…` | school name → office/school code |
+| KCI scholarly papers · authors | `scholar-papers__…` | article id |
+| Government startup-support programs (K-Startup) | `startup-support__…` | (page) |
+| Livestock auction grades & prices (Hanwoo etc.) | `livestock-grades__…` | period · breed |
+| National Assembly bills — search & progress timeline (committee→plenary→promulgation) | `assembly-bills__…` | bill title/proposer, or bill number |
 
 ## How to use the tools well
 - **Resolve identifiers first.** Many tools need a code: search the company/ticker
